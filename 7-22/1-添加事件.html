@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+	*{
+		padding:0;
+		margin:0;
+	}
+	
+	</style>
+</head>
+<body>
+	<input type="button" value="button1" class="btn1">
+	<input type="button" value="button2" class="btn2">
+	<input type="button" value="button3" class="btn3">
+	<input type="button" value="移除btn3" class="btn4">
+	<script>
+		var oBtn1=document.querySelector(".btn1");
+		var oBtn2=document.querySelector(".btn2");
+		var oBtn3=document.querySelector(".btn3");
+		var oBtn4=document.querySelector(".btn4");
+		oBtn1.onclick=function(){
+			alert("first btn1");
+		}
+		oBtn1.onclick=function(){
+			alert("second btn1");
+		}
+		oBtn2.addEventListener("click",function(){
+			alert("first btn2");
+		});
+		oBtn2.addEventListener("click",function(){
+			alert("second btn2");
+		});
+		oBtn3.addEventListener("click",fun,false);
+		oBtn4.addEventListener("click",function(){
+			oBtn3.removeEventListener("click",fun,false);//可移除oBtn3;
+		});	
+		function fun(){
+			alert("fun click");
+		}
+	</script>
+</body>
+</html>

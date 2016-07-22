@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+	*{
+		padding:0;
+		margin:0;
+	}
+	.big{
+		width: 300px;
+		height: 300px;
+		margin:0 auto;
+		background-color:red;
+	}
+	.big .center{
+		width: 200px;
+		height: 200px;
+		margin:0 auto;
+		background-color:green;
+	}
+	.big .center .small{
+		width: 100px;
+		height: 100px;
+		margin:0 auto;
+		background-color:blue;
+	}
+	</style>
+</head>
+<body>
+	<div class="big">
+		<div class="center">
+			<div class="small"></div>
+		</div>
+	</div>
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">
+		var oBtn1=document.querySelector(".big");
+		var oBtn2=document.querySelector(".center");
+		var oBtn3=document.querySelector(".small");
+		// oBtn1.onclick=function(){//1
+		// 	alert("btn11");
+		// }
+		// oBtn2.onclick=function(){
+		// 	alert("btn22");
+		// }
+		// oBtn3.onclick=function(){
+		// 	alert("btn33");
+		// }
+		// oBtn1.addEventListener("click",function(){//2
+		// 	alert("big");
+		// },true);
+		// oBtn2.addEventListener("click",function(){
+		// 	alert("center");
+		// },true);
+		// oBtn3.addEventListener("click",function(){
+		// 	alert("small");
+		// },true);
+
+		oBtn1.addEventListener("click",function(){//3
+			alert("big");
+		},false);
+		oBtn2.addEventListener("click",function(){
+			alert("center");
+		},false);
+		oBtn3.addEventListener("click",function(event){
+			alert("small");
+			event.stopPropagation();//停止事件冒泡；
+		},false);
+	</script>
+</body>
+</html>

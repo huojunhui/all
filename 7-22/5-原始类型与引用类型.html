@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+	*{
+		padding:0;
+		margin:0;
+	}
+	
+	</style>
+</head>
+<body>
+	
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">
+		// var obj1={name:"xiaoming"};//1
+		// var obj2={name:"xiaoming"};
+		// console.log(obj1==obj2);
+
+		// var obj1={name:"xiaoming"};//2
+		// var obj2={name:"xiaoming"};
+		// console.log(obj1==obj2);
+
+		// var obj={name:"xiaoming"};//3
+		// function fun(ob){
+		// 	ob.name="xiaoliang";
+		// }
+		// fun(obj);
+		// console.log(obj.name);
+
+		function fun(x){//4
+			x+=10;//不管里面怎么变，改的也是形参，不会影响实参。
+		}
+		var n=100;
+		fun(n);
+		console.log(n);
+	</script>
+</body>
+</html>
