@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	#img1{
+		display:block;
+		width: 500px;
+		height: 300px;
+		margin:0 auto;
+	}
+	.list{
+		width: 150px;
+		height: 50px;
+		margin:0 auto;
+		margin-top:20px;
+	}
+	.list li{
+		width: 28px;
+		height: 28px;
+		line-height: 28px;
+		text-align:center;
+		border:1px solid #aaa;
+		cursor:pointer;
+		list-style:none;
+		float:left;
+	}
+	.bgc{
+		background-color:green;
+	}
+	</style>
+</head>
+<body>
+	<img id="img1" src="images/1.jpg" alt="">
+	<ul class="list">
+		<li>一</li>
+		<li>二</li>
+		<li>三</li>
+		<li>四</li>
+		<li>五</li>
+	</ul>
+	<script>
+		var arrImgs=["images/1.jpg","images/2.jpg","images/3.jpg","images/4.jpg","images/5.jpg"];
+		var aLi=document.querySelectorAll("li");
+		var img1=document.querySelector("#img1");
+		for(var i=0;i<aLi.length;i++){
+			aLi[i].onclick=function(){
+				var src=arrImgs[index(this)];
+				img1.src=src;
+				addClass(this,"bgc");
+				var sib=siblings(this);
+				console.log(sib)
+				for(var j=0;j<sib.length;j++){
+					removeClass(sib[j],"bgc");
+				}
+			}
+		}
+		function index(elem){
+			var siblings = elem.parentNode.children;
+			for(var i=0;i<siblings.length;i++){
+				if(siblings[i] == elem){
+					return i;
+				}
+			}
+		}
+		function addClass(elem,str){
+			if(elem.className){
+				var oriName = elem.className;
+				var newClass = oriName + " " + str;
+				elem.className = newClass;
+			}else{
+				elem.className = str;
+			}
+		}
+		function removeClass(elem,str){
+			var cName = elem.className;
+			var arrClassName = cName.split(" ");
+			var newArr = [];
+			for(var i = 0;i<arrClassName.length;i++){
+				if(arrClassName[i] != str){
+					newArr.push(arrClassName[i]);
+				}
+			}
+			var newStr = newArr.join(" ");
+			elem.className = newStr;
+		}
+		function siblings(elem){
+			var sibs = elem.parentNode.children;
+			var newArr = [];
+			for(var i = 0;i<sibs.length;i++){
+				if(sibs[i] != elem){
+					newArr.push(sibs[i])
+				}
+			}
+			return newArr;
+		}
+	</script>
+</body>
+</html>

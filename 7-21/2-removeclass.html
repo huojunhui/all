@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	#div{
+		width: 100px;
+		height: 100px;
+		margin:0 auto;
+		background-color:#aaa;
+	}
+	.box1{
+		width: 100px;
+		height: 100px;
+		margin:0 auto;
+		background-color:#aaa;
+	}
+	.green{
+		background-color:green;
+	}
+	</style>
+</head>
+<body>
+	<div id="div" class="box box1"></div>
+	<input type="text" class="txt">
+	<input type="button" value="删除类名" class="btn">
+	<script>
+	var box=document.querySelector("#div");
+	var txt=document.querySelector(".txt")
+	var btn=document.querySelector(".btn")
+	txt.value=box.className;
+	btn.onclick=function(){
+		var str=prompt("请选择要删除的对象：");
+		box.className=removeclass(box,str);
+		txt.value=box.className;
+	}
+    function removeclass(box,str){
+    	var str1=box.className;
+		var arr=str1.split(" ");
+		var str2="";
+		for(var i=0;i<arr.length;i++){
+			if(arr[i]!=str){
+				if(str2==""){//一定要写双等号
+					str2=arr[i];
+				}else{
+					str2+=" "+arr[i];
+				}
+			}
+		}
+		return str2;
+    }
+	</script>
+</body>
+</html>

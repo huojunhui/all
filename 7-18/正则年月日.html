@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+	*{
+		padding:0;
+		margin:0;
+	}
+	
+	</style>
+</head>
+<body>
+	<label>输入年月日:</label>
+	<form action="">
+		<input type="text" class="txt1">
+	</form>
+	<p class="p2"></p>
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">
+		var ymd=/^([0-9]{4})\/([0-9]{2})\/([0-9]{2})$/;
+		$("form .txt1").blur(function(){
+			var num=$(this).val();
+			var result=ymd.exec(num);
+			var fun1=fun(result);
+			$(".p2").html(fun1);
+		});
+		function fun(result){
+			if(result){
+				var rightspan='<span class="green">格式正确!日期为：'+result[1]+'年'+result[2]+'月'+result[3]+'日</span>';
+				return rightspan;
+			}else{
+				var wrongspan='<span class="red">格式错误</span>';
+				return wrongspan;
+			}
+		}
+	</script>
+</body>
+</html>

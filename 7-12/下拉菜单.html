@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画1</title>
+		<style type="text/css">
+			*{
+				padding:0;
+				margin:0;
+			}
+			#list li{
+				list-style:none;
+				width:98px;
+				height: 28px;
+				border:1px solid #aaa;
+				float:left;
+				text-align:center;
+				line-height: 28px;
+				
+			}
+			#list li ul li{
+				list-style:none;
+				width:98px;
+				height: 28px;
+				text-align:center;
+				line-height: 28px;
+				display:none;
+			}
+			
+			.clear{
+				clear:both;
+			}
+			.box{
+				width:400px;
+				height:500px;
+				background-color:red;
+			}
+		</style>
+</head>
+<body>
+	<ul id="list">
+		<li class="l1">电视剧
+			<ul class="list1">
+				<li>学校</li>
+				<li>泡泡糖</li>
+				<li>福斯特</li>
+				<li>废柴舅舅</li>
+			</ul>
+		</li>
+		<li class="l2">电影
+			<ul class="list2">
+				<li>不可思议</li>
+				<li>功夫熊猫</li>
+				<li>报告老板</li>
+				<li>绝地逃亡</li>
+			</ul>
+		</li>
+		<li class="l3">动漫
+			<ul class="list3">
+				<li>禁忌咒纹</li>
+				<li>驱魔少年</li>
+				<li>神幻拍档</li>
+				<li>天行九歌</li>
+			</ul>
+		</li>
+		<li class="l4">音乐
+			<ul class="list4">
+				<li>学校1895</li>
+				<li>泡泡糖</li>
+				<li>福斯特</li>
+				<li>废柴style</li>
+			</ul>
+		</li>
+	</ul>
+	<div class="clear"></div>
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">		
+		$("#list .l1").mouseenter(function(){
+			$(".list1 li").slideDown(500);
+		});
+		$("#list .l1").mouseleave(function(){
+			$(".list1 li").slideUp(500);
+		});
+		$("#list .l2").mouseenter(function(){
+			$(".list2 li").slideDown(500);
+		});
+		$("#list .l2").mouseleave(function(){
+			$(".list2 li").slideUp(500);
+		});
+		$("#list .l3").mouseenter(function(){
+			$(".list3 li").slideDown(500);
+		});
+		$("#list .l3").mouseleave(function(){
+			$(".list3 li").slideUp(500);
+		});
+		$("#list .l4").mouseenter(function(){
+			$(".list4 li").slideDown(500);
+		});
+		$("#list .l4").mouseleave(function(){
+			$(".list4 li").slideUp(500);
+		});		
+	</script>
+</body>
+</html>

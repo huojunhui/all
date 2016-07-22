@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+	*{
+		padding:0;
+		margin:0;
+	}
+	.box{
+		width: 550px;
+		height: 500px;
+		margin:0 auto;
+		padding:200px;
+	}
+	.box form .lab{
+		width: 198px;
+		height: 100px;
+		float:left;
+		font-size:24px;
+	}
+	.box form .txt{
+		width: 298px;
+		height: 100px;
+		font-size:24px;
+		float:left;
+	}
+	.box form .lab1{	
+		width: 298px;
+		height: 50px;
+		font-size:12px;
+		margin-left:211px;
+		outline:none;
+		border:none;
+	}
+	.green{
+		color:green;
+		width: 298px;
+		height: 50px;
+		font-size:12px;
+		margin-left:211px;
+		outline:none;
+		border:none;
+	}
+	.red{
+		color:red;
+	}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<form action="">
+			<input type="label" value="请输入手机号:" class="lab">
+			<input type="text" class="txt">
+			<input type="label" class="lab1">
+		</form>
+	</div>
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">
+		$(".box form .txt").blur(function(){	
+			var num=/^[0-9]{11}$/;
+			var str=$(this).val();
+			var result4=num.test(str);
+			if(result4){
+				$(".lab1").val("输入正确！").removeClass("red").addClass("green");
+			}else{
+				$(".lab1").val("不是11位数字，请重新输入！").removeClass("green").addClass("red");
+			}
+		
+		});
+	</script>
+</body>
+</html>

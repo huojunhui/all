@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+	*{
+		padding:0;
+		margin:0;
+	}
+	input{
+		margin-left:200px;
+		margin-top:200px;
+	}
+	</style>
+</head>
+<body>
+	<input type="button" value="开始" class="btn1">	
+	<input type="button" value="停止" class="btn2">	
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">
+		var t=setInterval(fun,1000);
+		
+		var i=0;
+		function fun(){
+			i++;
+			console.log(i);
+		};
+		$(".btn1").click(function(){
+			t=setInterval(fun,1000);
+		});
+		$(".btn2").click(function(){
+			clearInterval(t);
+		});
+		
+	</script>
+</body>
+</html>

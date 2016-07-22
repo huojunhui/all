@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>img1_imgn</title>
+		<style type="text/css">
+			.box{
+				width:800px;
+				height: 500px;
+				
+				margin:0 auto;
+			}
+			.box #img1{
+				width:800px;
+				height:500px;
+			}
+			table{
+				margin:0 auto;
+			}
+			table #list li{
+				width:20px;
+				height:20px;
+				border:1px solid blue;
+				line-height:20px;
+				list-style:none;
+				border-collapse:collapse;
+				float:left;
+				text-align:center;
+			}
+			table #list .active{
+				background-color:green;
+			}
+			table ul li a{
+				text-decoration:none;
+			}
+		</style>
+</head>
+<body>
+	<div class="box">
+	<img id="img1" src="images/1.jpg" alt="">
+	</div>
+	<table>
+		<tr>
+			<td>
+				<ul id="list">
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+				</ul>
+			</td>
+		</tr>
+	</table>
+	<div class="active"></div>
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">
+		$("#list li").click(function(){
+			var index=$(this).index();
+			var src="images/"+(index+1)+".jpg";
+			$("#img1").attr("src",src);
+			$(this).addClass("active").siblings().removeClass("active");
+			// $(this).css("background-color","red").siblings().css("background-color","white");(2)
+		});		
+	</script>
+</body>
+</html>

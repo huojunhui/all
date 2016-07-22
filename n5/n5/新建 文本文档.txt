@@ -1,0 +1,39 @@
+.footer .foot ul .l1{
+	list-style:none;
+	float:right;
+	margin-right:16px;
+}
+.footer .foot ul .l2{
+	margin-right:20px;
+	list-style:none;
+	float:right;
+}
+.footer .foot ul .l3{
+	margin-right:20px;
+	list-style:none;
+	float:right;
+}
+.footer .foot ul .l4{
+	margin-right:20px;
+	list-style:none;
+	float:right;
+}
+.footer .foot ul .l5{
+	margin-right:20px;
+	list-style:none;
+	float:right;
+}
+.footer .foot ul .l6{
+	margin-right:0px;
+	list-style:none;
+	float:right;
+}
+.footer .foot a{
+	font-family:Arial;
+	font-size:14px;
+	color:#fff;
+}
+font-family:droid;
+	src:url(font/DroidSerif-Italic.otf);
+	font-family:helve;
+	src:url(font/helvetica.otf);

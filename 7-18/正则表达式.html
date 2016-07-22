@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+	*{
+		padding:0;
+		margin:0;
+	}
+	
+	</style>
+</head>
+<body>
+	
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">
+		// var re=/1/;
+		// var str="1";
+		// var result=re.test(str);
+		// console.log(result);
+		// var str="2";
+		// var result=re.test(str);
+		// console.log(result);
+		// var num=1;
+		// var result=re.test(num);
+		// console.log(result);
+		// var re1=/[0-9]/;
+		// var str="17587sfefe50fewafe";
+		// var result=re1.test(str);
+		// var result1=re1.exec(str);
+		// var re2=/[0-9]+/;
+		// console.log(result);
+		// console.log(result1);
+		// console.log(result2);
+		var re3=/[0-9]{4}/;
+		str="ab12445789";
+		var result3=re3.exec(str);
+		console.log(result3);
+		var re4=/^[0-9]{4}$/;
+		str="ab12445789";
+		var result4=re4.exec(str);
+		var email=/[0-9a-zA-Z]{8,15}\@qq\.com/;
+		console.log(email);
+
+	</script>
+</body>
+</html>

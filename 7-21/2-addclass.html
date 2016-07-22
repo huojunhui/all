@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	#div{
+		width: 100px;
+		height: 100px;
+		margin:0 auto;
+		background-color:#aaa;
+	}
+	.box1{
+		width: 100px;
+		height: 100px;
+		margin:0 auto;
+		background-color:#aaa;
+	}
+	.green{
+		background-color:green;
+	}
+	</style>
+</head>
+<body>
+	<div id="div" class="box box1"></div>
+	<input type="text" class="txt">
+	<input type="button" value="删除类名" class="btn">
+	<script>
+	var box=document.querySelector("#div");
+	var txt=document.querySelector(".txt")
+	var btn=document.querySelector(".btn")
+	btn.onclick=function(){
+		var box1=(function(box,s2){
+		var str="";
+		var s1=box.className
+		if(s1&&s2){
+			str=s1+" "+s2;
+		}else if(s1==""&&s2){
+			str=s2;
+		}else if(s1&&s2=""){
+			str=s1;
+		}
+		return str;
+	})(box,txt.value)
+	box.className=box1;
+	}
+	</script>
+</body>
+</html>

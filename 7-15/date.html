@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+	*{
+		padding:0;
+		margin:0;
+	}
+	form{
+		width:300px;
+		height: 500px;
+		margin:0 auto;
+	}
+	form input{
+		width: 300px;
+		height: 50px;
+	}
+	</style>
+</head>
+<body>
+	<form action="">
+		today<input class="today" type="label" value="">
+		year<input class="year" type="label" value="">
+		month<input class="month" type="label" value="">
+		date<input class="date" type="label" value="">
+
+		day<input class="day" type="label" value="">
+
+		hour<input class="hour" type="label" value="">
+		minute<input class="minute" type="label" value="">
+		second<input class="second" type="label" value="">
+
+		time<input class="time" type="label" value="">
+		<span id="year"></span>年
+		<span id="month"></span>月
+		<span id="date"></span>日
+		<span id="hour"></span>：
+		<span id="minute"></span>：
+		<span id="second"></span>
+
+	</form>
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">
+		var today=new Date();
+
+		var year=today.getFullYear();
+		var month=today.getMonth();
+		var date=today.getDate();
+
+		var day=today.getDay();
+
+		var hour=today.getHours();
+		var minute=today.getMinutes();
+		var second=today.getSeconds();
+
+		var time=today.getTime();
+
+		$(".today").val(today);
+
+		$(".year").val(year);
+		$(".month").val(month);
+		$(".date").val(date);
+
+		$(".day").val(day);
+
+		$(".hour").val(hour);
+		$(".minute").val(minute);
+		$(".second").val(second);
+
+		$(".time").val(time);
+
+		$("#year").text(year);
+		$("#month").text(month);
+		$("#date").text(date);
+		$("#hour").text(hour);
+		$("#minute").text(minute);
+		$("#second").text(second);
+	</script>
+</body>
+</html>

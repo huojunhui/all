@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画1</title>
+		<style type="text/css">
+			*{
+				padding:0;
+				margin:0;
+			}
+			#list li{
+				list-style:none;
+				width:98px;
+				height: 28px;
+				border:1px solid #aaa;
+				float:left;
+				text-align:center;
+				line-height: 28px;
+				
+			}
+			#list li ul li{
+				list-style:none;
+				width:98px;
+				height: 28px;
+				text-align:center;
+				line-height: 28px;
+				display:none;
+			}
+			
+			.clear{
+				clear:both;
+			}
+			.box{
+				width:400px;
+				height:500px;
+				background-color:red;
+			}
+		</style>
+</head>
+<body>
+	<ul id="list">
+		<li>电视剧
+			<ul>
+				<li>学校</li>
+				<li>泡泡糖</li>
+				<li>福斯特</li>
+				<li>废柴舅舅</li>
+			</ul>
+		</li>
+		<li>电影
+			<ul>
+				<li>不可思议</li>
+				<li>功夫熊猫</li>
+				<li>报告老板</li>
+				<li>绝地逃亡</li>
+			</ul>
+		</li>
+		<li>动漫
+			<ul>
+				<li>禁忌咒纹</li>
+				<li>驱魔少年</li>
+				<li>神幻拍档</li>
+				<li>天行九歌</li>
+			</ul>
+		</li>
+		<li>音乐
+			<ul>
+				<li>学校1895</li>
+				<li>泡泡糖</li>
+				<li>福斯特</li>
+				<li>废柴style</li>
+			</ul>
+		</li>
+	</ul>
+	<div class="clear"></div>
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">		
+		$("#list>li").mouseenter(function(){
+			$(this).find("ul li").stop().slideDown(500);
+		});
+		$("#list>li").mouseleave(function(){
+			$(this).find("ul li").stop().slideUp(500);
+
+		    /*stop用来在下一个动画开始时，停止之前没做完的动画；
+			find里面填写想找的内容，这里必须找到li级而不能只找到ul级，
+		    因为在li级别css样式设为了display:none;*/
+		});
+	</script>
+</body>
+</html>

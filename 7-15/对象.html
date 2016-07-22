@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+	*{
+		padding:0;
+		margin:0;
+	}
+	</style>
+</head>
+<body>	
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">
+		var cat={
+			name:"mimi",
+			age:2,
+			sayAge:function(){
+				alert(this.age);//sayAge方法内容
+			},
+			sayHello:function(){
+				var content="大家好！我是"+this.name+",今年"+this.age+"岁了!"
+				alert(content);
+			},
+			act:function(active){
+				var content="我喜欢"+active;
+				alert(content);
+			},
+			count:function(n1,n2,op){
+				var res=0;
+				switch(op){
+					case "+":res=Number(n1)+Number(n2);break;
+					case "-":res=Number(n1)-Number(n2);break;
+					case "*":res=Number(n1)*Number(n2);break;
+					case "/":res=Number(n1)/Number(n2);break;
+				}
+				alert(res);
+			}
+		}
+		alert(cat.name)
+		cat.sayAge();//调用sayAge方法
+		cat.name="miaomiao"
+		cat.sayHello();
+		cat.act("抓老鼠！");
+		cat.count(15,16,"*")
+	</script>
+</body>
+</html>

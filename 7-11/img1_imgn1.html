@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>img1-imgn1</title>
+	<style type="text/css">
+			.box{
+				width:600px;
+				height: 400px;
+				
+				margin:0 auto;
+			}
+			.box #img1{
+				width:600px;
+				height:400px;
+			}
+			table{
+				margin:0 auto;
+			}
+			table #list li{
+				width:20px;
+				height:20px;
+				border:1px solid blue;
+				line-height:20px;
+				list-style:none;
+				border-collapse:collapse;
+				float:left;
+				text-align:center;
+			}
+		</style>
+</head>
+<body>
+	<div class="box">
+		<img id="img1" src="images/1.jpg" alt="zzz">
+	</div>
+	<table>
+		<tr>
+			<td>
+				<ul id="list">
+					<li class="l1">1</li>
+					<li class="l2">2</li>
+					<li class="l3">3</li>
+					<li class="l4">4</li>
+					<li class="l5">5</li>
+				</ul>
+			</td>
+		</tr>
+	</table>
+	
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">
+		$("#list .l1").click(function(){
+			$("#img1").attr("src","images/1.jpg");
+		});
+		$("#list .l2").click(function(){
+			$("#img1").attr("src","images/2.jpg");
+		});
+		$("#list .l3").click(function(){
+			$("#img1").attr("src","images/3.jpg");
+		});
+		$("#list .l4").click(function(){
+			$("#img1").attr("src","images/4.jpg");
+		});
+		$("#list .l5").click(function(){
+			$("#img1").attr("src","images/5.jpg");
+		});
+
+		
+	</script>
+</body>
+</html>

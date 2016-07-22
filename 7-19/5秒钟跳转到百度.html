@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+	*{
+		padding:0;
+		margin:0;
+	}
+	.txt{
+		margin-left:200px;
+		width: 50px;
+		height: 50px;
+		font-size:24px;
+		border:1px solid blue;
+		border-radius:50px;
+		line-height:50px;
+		text-align:center;
+	}
+	</style>
+</head>
+<body>
+	<input type="text" class="txt">
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">
+		// var i=6;
+	 //    var t=setInterval(fun,1000);
+		// function fun(){
+		// 	if(i>1){
+		// 		i--;
+		// 		$(".txt").val(i);
+		// 	}else{
+		// 		clearInterval(t);
+	 //    		window.location.assign("http://baidu.com");
+		// 	}
+		// };
+		var i=5;
+	    var t=setInterval(fun,1000);
+		function fun(){
+			$(".txt").val(i);
+			
+			if(i==0){
+	    		window.location.href="http://baidu.com";
+    		}
+    		i--;
+		}
+	</script>
+</body>
+</html>

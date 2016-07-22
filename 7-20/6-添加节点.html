@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+	*{
+		padding:0;
+		margin:0;
+	}
+	input,ul{
+		margin-left:100px;
+	}
+	</style>
+</head>
+<body>
+	<input type="text" class="txt">
+	<ul id="list">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+	<input type="button" value="添加" class="btn">
+	<script type="text/javascript">
+		var btn=document.querySelector(".btn");
+		var txt=document.querySelector(".txt");
+		var list=document.querySelector("#list");
+		var li=document.querySelector("li");
+		btn.onclick=function(){
+			var valu=txt.value;
+			var ostr=document.createTextNode(valu);
+			var li=document.createElement("li");
+			li.appendChild(ostr);
+			list.appendChild(li);
+			txt.value="";
+		}
+	</script>
+</body>
+</html>

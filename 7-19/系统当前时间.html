@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+	*{
+		padding:0;
+		margin:0;
+	}
+	#btn{
+		
+		width: 100px;
+		height: 50px;
+		font-size:20px;
+		font-weight:bold;
+	}
+	</style>
+</head>
+<body>
+	剩余时间：
+	<span class="hour"></span>:
+	<span class="minute"></span>:
+	<span class="second"></span>
+	<br>
+	<input type="button" value="开始抢购" id="btn">
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">
+		var t=setInterval(fun,1000);  
+		var tomorrow1="2016/7/20 16:05:00"
+		var tomorrow=new Date(tomorrow1);
+		var hour1=tomorrow.getHours();
+		var minute1=tomorrow.getMinutes();
+		var second1=tomorrow.getSeconds();
+		var time1=tomorrow.getTime();
+		fun();
+		document.getElementById('btn').disabled=true;
+
+		function fun(){
+			var today=new Date();
+			var time=today.getTime();
+			var t1=time1-time;
+			var hour=Math.floor(t1/(60*60*1000));
+			var minute=Math.floor((t1-hour*(60*60*1000))/(60*1000));
+			var second=Math.floor((t1-hour*(60*60*1000)-minute*(60*1000))/1000);
+			$(".hour").text(hour);
+			$(".minute").text(minute);
+			$(".second").text(second);
+			if(hour==0 && minute==0 && second==0){
+				clearInterval(t);
+				$("#btn").css("color","red");
+				document.getElementById('btn').disabled=0;
+			}
+			$("#btn").click(function(){
+				window.location.href="http://baidu.com";
+			});
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画1</title>
+	<style type="text/css">
+	*{
+		padding:0;
+		margin:0;
+	}
+	form{
+		width:300px;
+		height: 100px;
+		margin:0 auto;
+		padding:200px;
+	}
+	.txt{
+		width: 300px;
+		height: 50px;
+
+	}
+	.num{
+		width: 30px;
+		height: 30px;
+		font-size:15px;
+		line-height: 30px;
+		text-align: center;
+		float:left;
+		margin-top:10px;
+	}
+	.opera{
+		width: 30px;
+		height: 30px;
+		font-size:15px;
+		line-height: 30px;
+		text-align: center;
+		float:left;
+		margin-top:10px;
+	}
+	.result{
+		width: 30px;
+		height: 30px;
+		font-size:15px;
+		line-height: 30px;
+		text-align: center;
+		float:left;
+		margin-top:10px;
+	}
+	.cls{
+		width: 30px;
+		height: 30px;
+		font-size:15px;
+		line-height: 30px;
+		text-align: center;
+		float:left;
+		margin-top:10px;
+	}
+	.clear{
+		clear:both;
+	}
+	</style>
+</head>
+<body>
+	<form action="">
+		<input class="txt" type="text">
+
+		<input class="num" type="button" value="0">
+		<input class="num" type="button" value="1">
+		<input class="num" type="button" value="2">
+		<input class="num" type="button" value="3">
+		<input class="num" type="button" value="4">
+		<input class="num" type="button" value="5">
+		<input class="num" type="button" value="6">
+		<input class="num" type="button" value="7">
+		<input class="num" type="button" value="8">
+		<input class="num" type="button" value="9">
+		<div class="clear"></div>
+		<input class="opera" type="button" value="+">
+		<input class="opera" type="button" value="-">
+		<input class="opera" type="button" value="*">
+		<input class="opera" type="button" value="/">
+
+		<input class="result" type="button" value="=">
+
+		<input class="cls" type="button" value="c">
+
+	</form>
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">
+		var num1="";
+		var num2="";
+		var opera="";	
+		$(".num").click(function(){
+			var num=$(this).val();
+			if(opera==""){
+				num1+=num;
+				$(".txt").val(num1);
+			}else{
+				num2+=num;
+				$(".txt").val(num2);
+			}
+		});
+		$(".opera").click(function(){
+				opera=$(this).val();	
+		}); 
+		$(".cls").click(function(){
+			num1="";
+			num2="";
+			opera="";
+			$(".txt").val("");
+		}); 
+		$(".result").click(function(){
+			if(num1){
+				if(num2){
+					if(opera){
+						switch(opera){
+							case "+":$(".txt").val(Number(num1)+Number(num2));break;
+							case "-":$(".txt").val(Number(num1)-Number(num2));break;
+							case "*":$(".txt").val(Number(num1)*Number(num2));break;
+							case "/":$(".txt").val(Number(num1)/Number(num2));break;
+						}
+						num1="";
+						num2="";
+						opera="";
+						
+					}
+				}
+			}
+		})
+	</script>
+</body>
+</html>

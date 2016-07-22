@@ -1,0 +1,13 @@
+*{
+	margin:0px;
+	padding:0px;
+}   
+table ul li{
+    border:1px solid blue;
+    float:left;
+    list-style:none;
+}
+table{
+    border-collapse: collapse;
+    margin:0 auto;
+}

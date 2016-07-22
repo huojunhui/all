@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画1</title>
+	<style type="text/css">
+		*{
+			padding:0;
+			margin:0;
+		}
+		#list li{
+			list-style:none;
+		}
+		span{
+			color:red;
+		}
+		form{
+			margin:0 auto;
+			width:200px;
+			height: 100px;
+		}
+		form input{
+			margin-top:50px;
+		}
+		ul{
+			margin:0 auto;
+			width:200px;
+			height: 200px;
+		}
+	</style>
+</head>
+<body>
+	<form action="">
+		<input class="txt" type="text">
+		<input class="btn" type="button" value="添加" >
+	</form>
+	<ul id="list">
+		<li>苹果<span>删除</span></li>
+		<li class="banana">香蕉<span>删除</span></li>
+		<li>葡萄<span>删除</span></li>
+	</ul>
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">	
+		$(".btn").click(function(){
+			var txtval=$(".txt").val();
+			var li="<li>"+txtval+"</li>";
+			$("#list").append(li);//在父级下，子级尾追加一个li;
+			$("#list").prepend(li);//在父级下，子级首追加一个li;
+			$("#list .banana").before(li);//同级下，指定子级前追加一个li;
+			$("#list .banana").after(li);//同级下，指定子级后追加一个li;
+		});	
+		$("ul li span").click(function(){
+			$(this).parent("li").remove();//子级下，删除父级li;
+		});	
+		$("ul li").click(function(){
+			$(this).remove();//删除本级li;
+		});	
+	</script>
+</body>
+</html>

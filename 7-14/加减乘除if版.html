@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数据类型</title>
+	<style type="text/css">
+	*{
+		padding:0;
+		margin:0;
+	}
+	.box{
+		width: 300px;
+		height: 300px;
+		margin:0 auto;
+		padding-top:50px;
+	}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<form action="">
+			<input class="txt1" type="text">
+			<br/>
+			<form class="ysf" action="">
+				<select name="运算符" id="ysf">
+					<option value="+">+</option>
+					<option value="-">-</option>
+					<option value="*">*</option>
+					<option value="/">/</option>
+				</select>
+			</form>
+			<br/>
+			<input class="txt2" type="text">
+			<br/>
+			=
+			<br/>
+			<input class="result" type="text">
+			<br/>
+			<input class="btn" type="button" value="生成">
+		</form>
+	</div>
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">
+		$(".btn").click(function(){
+			var txt1=$(".txt1").val();
+		    var txt2=$(".txt2").val();
+		    var ysf=document.getElementById("ysf");
+		    if(ysf.value=="+"){
+		        var resu=Number(txt1)+Number(txt2);	
+		    }
+			if(ysf.value=="-"){
+		        var resu=Number(txt1)-Number(txt2);	
+		    }
+		    if(ysf.value=="*"){
+		        var resu=Number(txt1)*Number(txt2);	
+		    }
+		    if(ysf.value=="/"){
+		        var resu=Number(txt1)/Number(txt2);	
+		    }
+			$(".result").val(resu);
+		});
+	</script>
+</body>
+</html>

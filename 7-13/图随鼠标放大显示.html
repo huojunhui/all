@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画1</title>
+	<style type="text/css">
+		*{
+			padding:0;
+			margin:0;
+		}
+		.imgs{
+			width: 1500px;
+			height: 300px;
+		}
+		.imgs img{
+			width: 500px;
+			height: 300px;
+			float:left;
+		}
+		.img1 img{
+			width: 800px;
+			height: 500px;
+			display:none;
+			position:absolute;
+		}
+	</style>
+</head>
+<body>
+	<div class="imgs">
+		<img src="images/1.jpg" alt="">
+		<img src="images/2.jpg" alt="">
+		<img src="images/3.jpg" alt="">
+	</div>
+	<div class="img1">
+		<img src="images/1.jpg" alt="">
+	</div>
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">	
+		$(".imgs img").mousemove(function(event){
+			var x=event.pageX;
+			var y=event.pageY;
+			var x=x+10;
+			var y=y+10;
+			var ind=$(this).index()+1;
+			var src="images/"+ind+".jpg";
+			$(".img1 img").attr("src",src);
+			$(".img1 img").css("display","block");
+			$(".img1 img").animate({"left":x},0);
+			$(".img1 img").animate({"top":y},0);
+		});
+		$(".imgs img").mouseleave(function(){
+			$(".img1 img").css("display","none");
+		});
+	</script>
+</body>
+</html>

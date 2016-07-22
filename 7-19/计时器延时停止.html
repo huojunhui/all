@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+	*{
+		padding:0;
+		margin:0;
+	}
+	input{
+		margin-left:200px;
+		margin-top:200px;
+	}
+	.txt{
+		border:none;
+	}
+	</style>
+</head>
+<body>
+	<input type="text" value="碰碰" class="txt">
+	<input type="button" value="开始" class="btn1">	
+	<input type="button" value="停止" class="btn2">	
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">
+		var i=0;
+		function fun(){
+			$(".txt").val("铛铛");
+		};
+		$(".btn1").click(function(){
+			t=setTimeout(fun,1000);
+		});
+		$(".btn2").click(function(){
+			clearTimeout(t);
+			$(".txt").val("碰碰");
+		});	
+	</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画</title>
+		<style type="text/css">
+			*{
+				padding:0;
+				margin:0;
+			}
+			.box{
+				margin-top:30px;
+				width:698px;
+				height:598px;
+				background-color:red;
+
+			}
+			.box img{
+				width:498px;
+				height:398px;
+			}
+			input{
+				margin-top:10px;
+				width: 50px;
+				height:50px;
+			}
+			.active{
+				background-color:blue;
+			}
+		</style>
+</head>
+<body>
+	
+	<div class="box">
+		<img src="images/4.jpg" alt="">
+	</div>
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">
+		$(".box").mouseenter(function(){
+			$(this).addClass("active");
+		});
+		$(".box").mouseleave(function(){
+			$(this).removeClass("active");
+		});
+	</script>
+</body>
+</html>

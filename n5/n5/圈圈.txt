@@ -1,0 +1,42 @@
+.low .right1 .span{
+	width: 61px;
+	height: 61px;
+	background-color:#333333;
+	border-radius:61px;
+	border:1px solid #333333;
+	position:relative;
+}
+.low .right1 .span .sp{
+	color:#fff;
+}
+.low .right1 .span .sp .p1{
+	font-size:14px;	
+	position:relative;
+	width:30px;
+	height:11px;
+	margin-left:0px;
+}
+.low .right1 .span .sp .p2{
+	margin-top:0px;
+	font-size:14px;	
+	position:relative;
+	top:-42px;
+	width: 12px;
+	height: 12px;
+	margin-left:0px;
+}
+
+
+
+
+<div class="span">
+						
+<ul class="sp">
+							
+<li class="p1">AUG</li>
+							
+<li class="p2">17</li>
+						
+</ul>
+				   
+ </div>

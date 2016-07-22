@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+	*{
+		padding:0;
+		margin:0;
+	}
+	
+	</style>
+</head>
+<body>
+	
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">
+		function hello(){
+			alert("hello world");
+		}
+		hello();
+		function f(x){
+			var result=3*x+5;
+			alert(result);
+		}
+		f(5);
+		alert(f(5));//undefined变量未定义
+		var  x=f(5);
+		alert(x);//undefined变量未定义
+		function f1(x,y,z){
+			var res=3*x+y*z;
+			return res;
+		}
+		//alert(f1(5,6,7));
+		var ff=f1(5,6,7);
+		alert(ff);
+	</script>
+</body>
+</html>

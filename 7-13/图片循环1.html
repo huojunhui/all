@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画1</title>
+		<style type="text/css">
+			*{
+				padding:0;
+				margin:0;
+			}
+			.img1{
+				height:500px;
+				width: 800px;
+				margin:0 auto;
+				overflow:hidden;
+			}
+			.img1 ul{
+				list-style: none;
+				width: 4000px;
+				height: 500px;
+			}
+			.img1 ul li{
+				
+				float:left;
+			}
+			.img1 ul li img{
+				width: 800px;
+				height: 500px;
+			}
+			table{
+				margin:0 auto;
+			}
+			table tr td ul{
+				list-style:none;
+			}
+			table tr td ul li{
+				cursor:pointer;
+				float:left;
+				width:30px;
+				height:30px;
+				border:1px solid #aaa;
+				text-align: center;
+				line-height: 30px;
+			}
+		</style>
+</head>
+<body>
+	<div class="img1">
+		<ul>
+			<li><img src="images/1.jpg" alt=""></li>
+			<li><img src="images/2.jpg" alt=""></li>
+			<li><img src="images/3.jpg" alt=""></li>
+			<li><img src="images/4.jpg" alt=""></li>
+			<li><img src="images/5.jpg" alt=""></li>
+		</ul>
+	</div>
+	<div class="clear"></div>
+	<table>
+		<tr>
+			<td>
+				<ul>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+				</ul>
+			</td>
+		</tr>
+	</table>
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">	
+		$("table tr td ul li").click(function(){
+			var ind=$(this).index();
+			var px1=(-800)*ind;
+			$(".img1 ul").animate({"margin-left":px1},500)
+			/*注意：px1变量是数字变量，这里没有加单位，默认单位是px;
+		      思路：一个800宽的小框中放一个4000宽的大框，
+		      图片在大框中左浮动，然后在小框overflow:hidden;
+		      隐藏超出的内容。设一个变量，图片宽度*index值正好是向左移动的距离。
+		    */
+		});	
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+	*{
+		padding:0;
+		margin:0;
+	}
+	</style>
+</head>
+<body>
+	<span class="hour"></span>:
+	<span class="minute"></span>:
+	<span class="second"></span>
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">
+		var t=setInterval(fun,1000);  
+		function fun(){
+			var today=new Date();
+			var hour=today.getHours();
+			var minute=today.getMinutes();
+			var second=today.getSeconds();
+			$(".hour").text(hour);
+			$(".minute").text(minute);
+			$(".second").text(second);
+		}
+	</script>
+</body>
+</html>

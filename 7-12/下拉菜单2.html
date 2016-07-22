@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画1</title>
+		<style type="text/css">
+			*{
+				padding:0;
+				margin:0;
+			}
+			#list li{
+				list-style:none;
+				width:98px;
+				height: 28px;
+				border:1px solid #aaa;
+				text-align:center;
+				line-height: 28px;	
+			}
+			#list .l1{
+				color:red;
+				background-color:#aaa;
+			}
+			#list .l2{
+				color:green;
+				background-color:blue;
+			}
+			.clear{
+				clear:both;
+			}
+			.box{
+				width:400px;
+				height:500px;
+				background-color:red;
+			}
+		</style>
+</head>
+<body>
+	<ul id="list">
+		<li class="l1">电视剧</li>
+		<li class="l2">电视剧</li>
+	</ul>
+	<div class="clear"></div>
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">		
+		$("#list .l1").mouseenter(function(){
+			$("#list .l1").stop().slideDown(500);
+			$("#list .l2").stop().slideUp(500);
+		});
+		$("#list .l2").mouseenter(function(){
+			$("#list .l1").stop().slideUp(500);
+			$("#list .l2").stop().slideDown(500);
+		});
+	</script>
+</body>
+</html>

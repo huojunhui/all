@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+	*{
+		padding:0;
+		margin:0;
+	}
+	.img{
+		margin:0 auto;
+		width: 500px;
+		height: 300px;
+		overflow:hidden;
+	}
+	.img .img1{
+		width: 2500px;
+		height: 300px;
+	}
+	.img .img1 .img2{
+		width: 500px;
+		height: 300px;
+		float:left;
+	}
+	</style>
+</head>
+	<div class="img">
+		<div class="img1">
+			<img class="img2" src="images/1.jpg" alt="zzz">
+			<img class="img2" src="images/2.jpg" alt="zzz">
+			<img class="img2" src="images/3.jpg" alt="zzz">
+			<img class="img2" src="images/4.jpg" alt="zzz">
+			<img class="img2" src="images/5.jpg" alt="zzz">
+		</div>
+	</div>
+<body>
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">
+		var t=setInterval(fun,1000);
+		var i=0;
+		var temp = true;
+		function fun(){
+			// for(var j=-4;j<=4;j++){
+			// 	$(".img1").animate({"margin-left":j*500},3000);
+			// 	console.log(j*500)
+			// }
+
+			// if(i>=0 && i<5){
+			// 	$(".img1").css("margin-left",-i*500);
+			// 	i++;
+			// }else if(i==5){
+			// 	i=0;
+			// }
+
+			if(temp){
+				i++;
+				if(i==4){
+					temp = false;
+				}
+			}else{
+				i--;
+				if(i==0){
+					temp = true;
+				}
+			}
+			$(".img1").animate({"margin-left":-i*500},1000);
+		}
+	</script>
+</body>
+</html>

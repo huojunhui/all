@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画1</title>
+		<style type="text/css">
+			*{
+				padding:0;
+				margin:0;
+			}
+			.clear{
+				clear:both;
+			}
+			.div1{
+				float:left;
+				width: 98px;
+				height: 38px;
+				border:1px solid blue;
+				overflow:hidden;
+			}
+			ul li{
+				list-style:none;
+			}
+			span{
+				display:block;
+				width: 98px;
+				height:38px;
+				background-color:red;
+				text-align: center;
+				line-height: 38px;
+			}
+			a{
+				display:block;
+				width: 98px;
+				height:38px;
+				background-color:yellow;
+				text-align: center;
+				line-height: 38px;
+				text-decoration: none;	
+			}
+		</style>
+</head>
+<body>
+	<ul>
+		<li>
+			<div class="div1">
+				<span>电影</span>
+				<a href="">电影</a>
+			</div>
+		</li>
+		<li>
+			<div class="div1">
+				<span>电视剧</span>
+				<a href="">电视剧</a>
+			</div>
+		</li>
+		<li>
+			<div class="div1">
+				<span>音乐</span>
+				<a href="">音乐</a>
+			</div>
+		</li>
+	</ul>
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">		
+		$("ul li .div1").mouseenter(function(){
+			$(this).find("span").stop().animate({"margin-top":"-38px"},500);
+		});
+		$("ul li .div1").mouseleave(function(){
+			$(this).find("span").stop().animate({"margin-top":"0px"},500);
+		});
+	</script>
+</body>
+</html>

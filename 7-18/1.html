@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+	*{
+		padding:0;
+		margin:0;
+	}
+	
+	</style>
+</head>
+<body>
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">
+		var str="hello world"
+		// var newstr=str.replace("hello","happy");
+		// console.log(newstr);
+		var re=/[a-z]/g;//全局匹配
+		var newst=str.replace(re,"$");
+		console.log(newst);
+		var re1=/[a-z]/i;//不区分大小写
+		str="124ABc567def"
+		var newst1=str.replace(re1,"$");
+		console.log(newst1);
+
+		var str="124-ABc-567-def"
+		var newst2=str.split("-");//用-分成数组
+		console.log(newst2);
+		
+		var str="124abc567def"
+		var re=/^[a-z]{3}$/
+		var newst3=str.split(re);
+		console.log(newst3);
+	</script>
+</body>
+</html>

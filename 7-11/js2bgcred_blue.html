@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>red-blue</title>
+		<style type="text/css">
+			.box{
+				width:500px;
+				height: 500px;
+				background-color:red;
+				margin:0 auto;
+			}
+		</style>
+</head>
+<body>
+	<div class="box1">
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	</div>
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">
+		$(".box").click(function(){
+			$(this).css("background-color","blue"),siblings.css("background-color","white")
+		});
+		
+	</script>
+</body>
+</html>

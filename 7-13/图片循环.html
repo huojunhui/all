@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画1</title>
+		<style type="text/css">
+			*{
+				padding:0;
+				margin:0;
+			}
+			.img1{
+				width:500px;
+				height:300px;
+				margin:0 auto;
+				overflow:hidden;
+
+			}
+			.img1 .img2{
+				width:2500px;
+				height:300px;
+			}
+			.img1 .img2 .img3{
+				display:block;
+				width:500px;
+				height:300px;	
+				float:left;
+			}
+			.clear{
+				clear:both;
+			}
+			table tr td ul li{
+				list-style:none;
+				width:20px;
+				height: 20px;
+				line-height: 20px;
+				text-align:center;
+				border:1px solid #aaa;
+				border-radius:20px;
+				float:left;
+			}
+			table{
+				margin:0 auto;
+			}
+		</style>
+</head>
+<body>
+	<div class="img1">
+		<div class="img2">
+			<img class="img3" src="images/1.jpg" alt="">
+			<img class="img3" src="images/2.jpg" alt="">
+			<img class="img3" src="images/3.jpg" alt="">
+			<img class="img3" src="images/4.jpg" alt="">
+			<img class="img3" src="images/5.jpg" alt="">
+		</div>
+	</div>
+	<div class="clear"></div>
+	<table>
+		<tr>
+			<td>
+				<ul>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+				</ul>
+			</td>
+		</tr>
+	</table>
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">		
+		$("table tr td ul li").click(function(){
+			var index=$(this).index();
+			var num=(-500*index)+"px";
+			$(".img2").stop().animate({"margin-left":num},500);
+		});
+	</script>
+</body>
+</html>

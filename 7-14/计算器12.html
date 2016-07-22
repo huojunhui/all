@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>科学计算器</title>
+	<link rel="stylesheet" href="11.css">
+</head>
+<body>
+	<div class="counter">
+		<div class="top">
+			<div class="t"></div>
+			<div class="b">
+				<div class="box">
+					<form action="">
+						<input type="text">
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="center">
+			<img src="images/bg2.gif" alt="zzz">
+		</div>
+		<div class="bottom">
+			<div class="left">
+				<form action="">
+					<input type="button" value="%" class="blue">
+					<input type="button" value="√" class="blue">
+					<input type="button" value="x!" class="blue">
+					<input type="button" value="sin" class="blue">
+					<input type="button" value="cos" class="blue">
+					<input type="button" value="tan" class="blue">
+					<input type="button" value="ln" class="blue">
+					<input type="button" value="log" class="blue">
+					<input type="button" value="1/x" class="blue">
+					<button class="blue">
+						e<span>x</span>
+					</button>
+					<button class="blue">
+						x<span>2</span>
+					</button>
+					<button class="blue">
+						x<span>y</span>
+					</button>
+					<input type="button" value="abs" class="blue">
+					<input type="button" value="∏" class="blue">
+					<input type="button" value="e" class="blue">
+				</form>
+			</div>
+			<div class="center">
+				<form action="">
+					<input type="button" value="C" class="black">
+					<input type="button" value="÷" class="black">
+					<input type="button" value="x" class="black">
+					<input type="button" value="7" class="gray">
+					<input type="button" value="8" class="gray">
+					<input type="button" value="9" class="gray">
+					<input type="button" value="4" class="gray">
+					<input type="button" value="5" class="gray">
+					<input type="button" value="6" class="gray">
+					<input type="button" value="1" class="gray">
+					<input type="button" value="2" class="gray">
+					<input type="button" value="3" class="gray">
+					<input type="button" value="0" class="gray">
+					<input type="button" value="." class="gray" >
+					<input type="button" value="+/-" class="gray">
+				</form>
+			</div>
+			<div class="right">
+				<form action="">
+					<input type="button" value="x" class="blue">
+					<input type="button" value="-" class="black">
+					<input type="button" value="+" class="black">
+					<input type="button" value="()" class="black">
+					<input type="button" value="=" class="orange">
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">
+		// $("form input").click(function(){
+		// 	$(this).css("color","red").siblings().css("color","white");
+		// 	$("button").css("color","white");
+		// });
+		// $("button").click(function(){
+		// 	$(this).css("color","red").siblings().css("color","white");
+		// 	$("form input").css("color","white");
+		// });
+		var num1="";
+		var num2="";
+		var opera="";
+		var num22="";
+		var op="";
+		$(".blue").click(function(){
+			op=$(this).val();
+		});
+		$(".gray").click(function(){
+			if(opera==""){
+				num1+=$(this).val();
+				$(".counter .top .b .box form input").val(num1);
+			}else{
+				num2+=$(this).val();
+				num22=num1+opera+num2;
+				$(".counter .top .b .box form input").val(num22);
+			}
+		});
+		$(".black").click(function(){
+			opera=$(this).val();
+			switch(opera){
+				case "C":
+					num1="";
+					num2="";
+					opera="";
+					$(".counter .top .b .box form input").val("");
+					break;
+				case "()":
+					opera="";
+					break;
+				default:$(".counter .top .b .box form input").val(opera);
+			}
+		});
+		$(".orange").click(function(){
+			var result=0;
+			if(op==""){
+				switch(opera){
+				case "+":result=Number(num1)+Number(num2);break;
+				case "-":result=Number(num1)-Number(num2);break;
+				case "x":result=Number(num1)*Number(num2);break;
+				case "÷":result=Number(num1)/Number(num2);break;
+				case "%":result=Number(num1)%Number(num2);break;
+				};
+				num2="";
+				num1=result;	
+			}else{
+				if(opera==""){
+					switch(op){
+						case "√":result=Math.sqrt(Number(num1));break;
+						case "x!":
+						var y=1;
+						var x=Number(num1);
+						for(var i=1;i<=x;i++){y*=x;}
+						result=y;
+						break;
+						case "sin":result=Math.sin(Number(num1));break;
+						case "cos":result=Math.cos(Number(num1));break;
+						case "tan":result=Math.tan(Number(num1));break;
+						case "ln":result=Math.log(Number(num1));break;
+						case "log":result=Math.tan(Number(num1));break;
+						case "1/x":result=Math.log(Number(num1));break;
+					};
+					num1="";
+				}
+			}
+			$(".counter .top .b .box form input").val(result);			
+		});
+	</script>
+</html>

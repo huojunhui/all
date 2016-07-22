@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>homework1</title>
+	<style type="text/css">
+		*{
+			padding:0;
+			margin:0;
+		}
+		.box{
+			width: 200px;
+			height: 200px;
+			margin:0 auto;
+			margin-top:200;
+		}
+		.box ul{
+			list-style:none;
+		}
+		.box ul li span{
+			color:red;
+			font-size:12px;
+		}	
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul id="list">
+			<li>香蕉<span>删除</span></li>
+			<li>苹果<span>删除</span></li>
+			<li>葡萄<span>删除</span></li>
+		</ul>
+		<input type="button" class="btn1" value="添加">
+	</div>
+	<script src="script/jquery.js"></script>
+	<script type="text/javascript">	
+		$(".btn1").click(function(){
+			var pro=window.prompt("请输入要添加的内容:");
+			if(pro){
+				var li="<li>"+pro+"<span>删除</span></li>"
+				$("#list").append(li);
+
+			// var li=$("<li></li>");
+			// $(li).text(pro);
+			// $("#list").append(li);
+			}
+		});
+		$("span").click(function(){
+			var conf=window.confirm("真的想要删除么？");
+			if(conf){
+				$(this).parent().remove();
+			}
+		});
+		
+	</script>
+</body>
+</html>
